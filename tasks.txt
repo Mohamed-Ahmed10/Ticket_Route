@@ -1,0 +1,7 @@
+1- Single page app
+2- EN & AR
+3- Business model canvas ( Paper )
+4- Uploaded 
+5- Reaponsive 
+6- Backend ( Database )
+7- ID & print & QR 

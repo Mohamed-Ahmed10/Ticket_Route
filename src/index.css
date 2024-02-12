@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900;1000&display=swap');
+
+body {
+    background-color: #ececec !important;
+    height: 5000px;
+    font-family: 'Cairo', sans-serif !important;
+}
+
+.carousel.slide {
+    margin-bottom: 30px;
+}
+
+.carousel.slide img {
+    max-width: 100%;
+    max-height: 80vh;
+    display: block;
+    margin: auto;
+}
+
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+    background-color: #999;
+}
+
+.carousel-indicators {
+    display: none !important;
+}
+
+.carousel-caption {
+    color: #25e82d;
+    background: #515151c2;
+    width: 50%;
+    margin: auto;
+    border: 2px solid #FFF;
+    border-radius: 10px;
+}
+
+.testimonials img {
+    width: 100px;
+    border-radius: 50%
+}
+
+.testimonial .star {
+    color: #FFD700
+}

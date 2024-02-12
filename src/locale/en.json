@@ -1,0 +1,16 @@
+{
+  "home": "Home",
+  "about": "About",
+  "contact": "Contact",
+  "bus_title": "You can reserve bus ticket",
+  "plane_title": "You can reserve plane ticket",
+  "train_title": "You can reserve train ticket",
+  "plane_desc": "With economy and first class planes ",
+  "bus_desc": "With best air condition busses ",
+  "train_desc": "With fast and comfortable trains",
+  "person_one": "John Doe",
+  "person_one_opinion": "I had an amazing experience using this service. The bus was comfortable, and the staff was friendly and helpful. I highly recommend it!",
+  "person_two": "Jane Smith",
+  "person_two_opinion": "Booking my plane ticket was so easy with this website. The process was smooth, and the prices were competitive. I will definitely use it again for my future travels!",
+  "reservation":"Reserve now"
+}
