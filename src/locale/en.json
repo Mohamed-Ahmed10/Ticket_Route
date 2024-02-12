@@ -12,5 +12,7 @@
   "person_one_opinion": "I had an amazing experience using this service. The bus was comfortable, and the staff was friendly and helpful. I highly recommend it!",
   "person_two": "Jane Smith",
   "person_two_opinion": "Booking my plane ticket was so easy with this website. The process was smooth, and the prices were competitive. I will definitely use it again for my future travels!",
-  "reservation":"Reserve now"
+  "reservation":"Reserve now",
+  "client_name":"Please enter your name",
+  "tour_data":"Tour data"
 }
