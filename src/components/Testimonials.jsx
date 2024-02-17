@@ -9,7 +9,7 @@ const Testimonials = () => {
 
 
     return (
-        <div className="testimonials">
+        <div className="testimonials my-4">
             <Container>
                 <Row>
 

@@ -12,12 +12,11 @@ function SiteNav() {
     }
     return (
         <Navbar expand="lg" className="bg-body-tertiary">
-            {console.log(i18n)}
             <Container>
                 <Navbar.Brand href="#home">Ticket route</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
-                    <Nav className={`mx-auto ${i18n.language === 'ar' && 'flex-row-reverse'}`} >
+                    <Nav className="mx-auto" >
                         <NavLink className="nav-link" to="/">{t('home')}</NavLink>
                         <NavLink className="nav-link" to="/about">{t('about')}</NavLink>
                         <NavLink className="nav-link" to="/contact">{t('contact')}</NavLink>

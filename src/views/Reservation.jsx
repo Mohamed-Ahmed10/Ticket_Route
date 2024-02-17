@@ -1,76 +1,74 @@
 import { useTranslation } from "react-i18next";
-import InfiniteCalendar from 'react-infinite-calendar';
+import { Row, Col, Container, Spinner } from 'react-bootstrap';
+import TransportCard from "../components/TransportCard";
+import bus from "../assets/bus.jpg"
+import train from "../assets/train.jpg"
+import plane from "../assets/plane.jpeg"
+import car from "../assets/car.jpg"
 import { useState } from "react"
-import { Button, Modal, Form } from 'react-bootstrap';
-import Swal from 'sweetalert2'
 
 export default function Reservation() {
     let { t } = useTranslation()
-    var today = new Date();
 
-    const confirm = () => {
-        Swal.fire({
-            title: 'Error!',
-            text: 'Do you want to continue',
-            icon: 'error',
-            confirmButtonText: 'Cool'
-        })
-        handleClose()
-    }
-    var minDate = new Date(today.getFullYear(), today.getMonth(), today.getDate() - 6);
+    const [show, setShow] = useState(false)
 
-    const [show, setShow] = useState(false);
+    setTimeout(function () { setTimeout(setShow(true), 1500) }, 1500);
 
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
-    const handleDateSelect = (date) => {
-        console.log(date.toLocaleDateString('en-US', { year: 'numeric', month: 'numeric', day: 'numeric' }))
-    };
+    const services = [
+        {
+            name: 'bus',
+            ar_name:"اتوبيس",
+            pricePerPerson: 20.5,
+            from: "Cairo",
+            to: "Sharm Elshekh",
+            image: bus
+        },
+        {
+            name: 'train',
+            ar_name:"قطار",
+            pricePerPerson: 200,
+            from: "Cairo",
+            to: "Luxor",
+            image: train
+        },
+        {
+            name: 'airplane',
+            ar_name:"طائرة",
+            pricePerPerson: 7000,
+            from: "Cairo",
+            to: "London",
+            image: plane
+        },
+        {
+            name: 'Private car',
+            ar_name:"سيارة خاصة",
+            pricePerPerson: "Contact us for prices",
+            priceAr: "تواصل معنا للمزيد من التفاصيل",
+            from: "Customer order",
+            ar: "بناء على طلب العميل",
+            to: "Customer order",
+            image: car
+        }
+    ]
+
+
     return (
         <div className="pt-4 text-center">
             <h1>{t('reservation')}</h1>
 
-            <InfiniteCalendar
-                width={400}
-                height={400}
-                selected={today}
-                disabledDays={[0, 6]}
-                minDate={minDate}
-                onSelect={handleDateSelect}
-            />
 
-            <Button variant="primary" onClick={handleShow}>
-                Launch demo modal
-            </Button>
-
-
-            <Modal
-                show={show} onHide={handleClose}
-                size="lg"
-                aria-labelledby="contained-modal-title-vcenter"
-                centered
-            >
-                <Modal.Header closeButton>
-                    <Modal.Title id="contained-modal-title-vcenter">
-                        Modal heading
-                    </Modal.Title>
-                </Modal.Header>
-                <Modal.Body>
-                    <h4 className="text-center">{t('tour_data')}</h4>
-                    <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-                        <Form.Label>{t('client_name')}</Form.Label>
-                        <Form.Control type="text" placeholder="your name" />
-                    </Form.Group>
-                    <p>
-                        Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-                        dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
-                        consectetur ac, vestibulum at eros.
-                    </p>
-                </Modal.Body>
-                <Modal.Footer>
-                    <Button onClick={confirm}>Close</Button>
-                </Modal.Footer>
-            </Modal>
+            <Container>
+                {show ?
+                    <Row className="mt-4">
+                        {services.map(service =>
+                            <Col sm={6} className="p-2 d-flex justify-content-center" key={Math.random()}>
+                                <TransportCard service={service}></TransportCard>
+                            </Col>
+                        )}
+                    </Row> :
+                    <Spinner className="mt-4" animation="grow" />
+                }
+            </Container>
         </div>
     )
 }
